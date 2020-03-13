@@ -3,6 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hogwarts.jenkinsapi</groupId>
     <artifactId>iJenkinsApi</artifactId>
+    <packaging>jar</packaging>
     <version>1.0</version>
     <name>iJenkinsApi</name>
     <dependencies>
@@ -25,4 +26,32 @@
             <version>1.19.4</version>
         </dependency>
     </dependencies>
+    <build>
+        <finalName>iJenkinsAPI</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <appendAssemblyId>false</appendAssemblyId>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.hogwarts.jenkinsapi.ClientApi</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>assembly</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
