@@ -7,51 +7,14 @@
     <version>1.0</version>
     <name>iJenkinsApi</name>
     <dependencies>
-        <!-- log4j -->
+        <!-- https://mvnrepository.com/artifact/com.offbytwo.jenkins/jenkins-client -->
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.16</version>
-        </dependency>
-        <!-- json parser-->
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20080701</version>
-        </dependency>
-        <!-- jersey-client -->
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>1.19.4</version>
+            <groupId>com.offbytwo.jenkins</groupId>
+            <artifactId>jenkins-client</artifactId>
+            <version>0.3.8</version>
         </dependency>
     </dependencies>
     <build>
         <finalName>iJenkinsAPI</finalName>
-        <plugins>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>
-                    <appendAssemblyId>false</appendAssemblyId>
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                    <archive>
-                        <manifest>
-                            <mainClass>com.hogwarts.jenkinsapi.ClientApi</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>assembly</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
     </build>
 </project>
